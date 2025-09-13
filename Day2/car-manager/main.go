@@ -4,9 +4,11 @@ import "fmt"
 
 func main() {
 
+	fmt.Println("-------------\nCar Showroom\n-------------")
+
 	car1 := Car{Brand: "Toyota", Year: 2024, Price: 300.453}
 	fmt.Println(car1.Detail())
-	fmt.Println("Discounted Price:", car1.Discount(10), "$")
+	fmt.Println("Discounted Price:", car1.Discount(10), "$\n")
 
 	//create cars slice
 	cars := []Car{
@@ -17,7 +19,7 @@ func main() {
 
 	for _, c := range cars {
 		fmt.Println(c.Detail())
-		fmt.Println("Discount Price for", c.Brand, c.Discount(2))
+		fmt.Println("Discount Price for", c.Brand, c.Discount(2), "\n")
 	}
 
 	//create cars slice to carsMap map key value pair (key is Brand)
@@ -30,7 +32,7 @@ func main() {
 	if ok {
 		fmt.Println("Car brand found: ", mitsubishi.Brand)
 	} else {
-		fmt.Println("Car brand NOT FOUND!")
+		fmt.Println("Car brand NOT FOUND!\n")
 	}
 
 	//interface
