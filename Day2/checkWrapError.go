@@ -1,3 +1,6 @@
+// errors.Is → check if an error is a specific error.
+// errors.As → check if error is of a specific type.
+
 package main
 
 import (
