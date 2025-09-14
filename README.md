@@ -31,4 +31,4 @@
   - Study structs, slices, maps, methods, interfaces.
   - Mini project named car-manager.
 
-![Day 2 GIF]([https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif](https://giphy.com/gifs/justin-raccoon-pedro-tHIRLHtNwxpjIFqPdV))  
+![Day 2 GIF]([[https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif](https://giphy.com/gifs/justin-raccoon-pedro-tHIRLHtNwxpjIFqPdV)](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXhmZHJpcHQzYjJpNjVuNzhhYmprYWR1aXRjOG1wemk0dGZ4Z2VqOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tHIRLHtNwxpjIFqPdV/giphy.gif))  
