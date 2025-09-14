@@ -16,7 +16,7 @@
 ---
 
 ## Day 1 
-### Introduction <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG56Zm1uMHV3d3k2NDhqZDgwaWk5b2Jpamc3aDR2Mmd4OWVkdDVrdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dHM/UqH2kMIfcj3JsggEwR/giphy.gif" width="50">
+### Introduction <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG56Zm1uMHV3d3k2NDhqZDgwaWk5b2Jpamc3aDR2Mmd4OWVkdDVrdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dHM/UqH2kMIfcj3JsggEwR/giphy.gif" width="100">
 
 - ✅ **Topics Covered:**  
   - Installing Go  
