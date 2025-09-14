@@ -4,7 +4,7 @@
 
 > 💡 Remember: *Consistency is Key!*
 
-![Go Logo](./assets/Go_Icon.png)
+![Go Gif](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHo3OTg3b3Qya2F5NGFjY3lmODcya3lncDRraW1qOTZmbmRmMmMzMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/PhTSmzCqkliqIJ9ZtZ/giphy.gif)
 
 ---
 
@@ -16,9 +16,9 @@
 ---
 
 ## Day 1 
-### Introduction <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG56Zm1uMHV3d3k2NDhqZDgwaWk5b2Jpamc3aDR2Mmd4OWVkdDVrdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dHM/UqH2kMIfcj3JsggEwR/giphy.gif" width="100">
+### Introduction
 
-- ✅ **Topics Covered:**  
+- **Topics Covered:**  
   - Installing Go  
   - Learn go run, go build, go mod init.
   - Review variables, types, loops, functions. 
@@ -38,7 +38,7 @@ func main() {
 ## Day 2
 ### Dealing with data
 
-- ✅ **Topics Covered:**  
+- **Topics Covered:**  
   - Study structs, slices, maps, methods, interfaces.
   - Mini project named car-manager.
 
