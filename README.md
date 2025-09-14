@@ -11,7 +11,7 @@
 ## 📚 Table of Contents
 
 | [Day 1](#day-1) | Introduction to Go & Setup |<br>
-| [Day 2](#day-2) | Basic Syntax & Variables |<br>
+| [Day 2](#day-2) | Dealing with data |<br>
 
 ---
 
