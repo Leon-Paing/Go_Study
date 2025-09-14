@@ -10,8 +10,8 @@
 
 ## 📚 Table of Contents
 
-| [Day 1](#day-1) | Introduction to Go & Setup |
-| [Day 2](#day-2) | Basic Syntax & Variables |
+| [Day 1](#day-1) | Introduction to Go & Setup |<br>
+| [Day 2](#day-2) | Basic Syntax & Variables |<br>
 
 ---
 
