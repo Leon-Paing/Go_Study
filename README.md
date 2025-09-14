@@ -24,6 +24,7 @@
   - Review variables, types, loops, functions. 
   - Writing your first Go program
 
+*Example Code*
 ```go
 package main
 
@@ -41,6 +42,7 @@ func main() {
   - Study structs, slices, maps, methods, interfaces.
   - Mini project named car-manager.
 
+*Example Code*
 ```go
 package main
 
