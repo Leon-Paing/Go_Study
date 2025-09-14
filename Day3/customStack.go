@@ -44,7 +44,11 @@ func (s *Stack) Pop() (int, error) {
 	if len(s.stack) == 0 {
 		return 0, errors.New("Stack is empty")
 	}
+
+	//assign top value of stack to val variable
 	val := s.stack[len(s.stack)-1]
+
+	//slice the stack by excluding top value
 	s.stack = s.stack[:len(s.stack)-1]
 	return val, nil
 }
