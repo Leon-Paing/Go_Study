@@ -1,4 +1,4 @@
-# 🐹 Learn Go Programming with Me
+# 🦁 Learn Go Programming with Me
 
 ### This is the Go Programming guide for **beginners to experts**.  
 
