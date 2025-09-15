@@ -12,19 +12,19 @@
 
 ## 📚 Table of Contents
 
-| [Day 1](#day-1) | Introduction to Go & Setup |<br>
-| [Day 2](#day-2) | Dealing with data |<br>
-
+[Day 1](#day-1) | Introduction to Go & Setup <br>
+[Day 2](#day-2) | Dealing with data <br>
+[Day 3](#day-3) | custom Algorithms <br>
 ---
 
 ## Day 1 
 ### Introduction
 
 - **Topics Covered:**  
-  - Installing Go  
+  - Installing Go.  
   - Learn go run, go build, go mod init.
   - Review variables, types, loops, functions. 
-  - Writing your first Go program
+  - Writing your first Go program.
 
 *Example Code*
 ```go
