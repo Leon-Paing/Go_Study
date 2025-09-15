@@ -44,9 +44,21 @@ func main() {
 				break
 			} else {
 				for i, todo := range List {
-					fmt.Println("[", i, "]", todo.Task, "[", statusChecker(todo.Status), "]\n")
+					fmt.Println("[", i+1, "]", todo.Task, "[", statusChecker(todo.Status), "]\n")
 				}
 			}
+		case 3:
+			var index int
+			fmt.Print("Enter task number:")
+			fmt.Scanln(&index)
+
+			if index > 0 && index <= len(List) {
+				List[index-1].markDone()
+				fmt.Println("Task marked as Done!\n")
+			} else {
+				fmt.Println("Invalid index!\n")
+			}
+
 		case 5:
 			fmt.Println("See you! Good Bye!")
 			loop = false
@@ -76,4 +88,8 @@ func statusChecker(stat bool) string {
 	} else {
 		return "Done"
 	}
+}
+
+func (t *TodoList) markDone() {
+	t.Status = true
 }
