@@ -58,6 +58,17 @@ func main() {
 			} else {
 				fmt.Println("Invalid index!\n")
 			}
+		case 4:
+			var index int
+			fmt.Print("Enter task number:")
+			fmt.Scanln(&index)
+
+			if index > 0 && index <= len(List) {
+				List = append(List[:index-1], List[index:]...)
+				fmt.Println("Task deleted!\n")
+			} else {
+				fmt.Println("Invalid index!\n")
+			}
 
 		case 5:
 			fmt.Println("See you! Good Bye!")
