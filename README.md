@@ -73,7 +73,7 @@ type Valuable interface {
 
 - **Topics Covered:**  
   - Implement custom made stack and reverse string.
-  - Mini project named TodoListCLI.
+  - Mini project named TodoCLI.
 
 *Example Code*
 ```go
