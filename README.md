@@ -77,15 +77,27 @@ type Valuable interface {
 
 *Example Code*
 ```go
-	fmt.Print("Enter task:")
-	reader := bufio.NewReader(os.Stdin)
-	inputStr, _ := reader.ReadString('\n')
-	fmt.Println("\n")
-	inputStr = strings.TrimSpace(inputStr)
-	
-	var todo TodoList
-	result, status := todo.addTodo(inputStr)
-	task := TodoList{Task: result, Status: status}
-	List = append(List, task)
-	fmt.Println("Todo added!\n")
+type TodoList struct {
+	Task   string
+	Status bool
+}
+
+func (t *TodoList) addTodo(task string) (string, bool) {
+	t.Task = task
+	t.Status = false
+
+	return t.Task, t.Status
+}
+
+func statusChecker(stat bool) string {
+	if stat == false {
+		return "Pending"
+	} else {
+		return "Done"
+	}
+}
+
+func (t *TodoList) markDone() {
+	t.Status = true
+}
 ```
