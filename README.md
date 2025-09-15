@@ -69,7 +69,7 @@ type Valuable interface {
 }
 ```
 ## Day 3
-### Custom Algorithms
+### Todo List CLI App
 
 - **Topics Covered:**  
   - Implement custom made mini algorithms.
