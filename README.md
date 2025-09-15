@@ -68,4 +68,24 @@ type Valuable interface {
 	Value() float64
 }
 ```
+## Day 3
+### Custom Algorithms
 
+- **Topics Covered:**  
+  - Implement custom made mini algorithms.
+  - Mini project named TodoListCLI.
+
+*Example Code*
+```go
+fmt.Print("Enter task:")
+			reader := bufio.NewReader(os.Stdin)
+			inputStr, _ := reader.ReadString('\n')
+			fmt.Println("\n")
+			inputStr = strings.TrimSpace(inputStr)
+
+			var todo TodoList
+			result, status := todo.addTodo(inputStr)
+			task := TodoList{Task: result, Status: status}
+			List = append(List, task)
+			fmt.Println("Todo added!\n")
+```
