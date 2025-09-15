@@ -72,7 +72,7 @@ type Valuable interface {
 ### Todo List CLI App
 
 - **Topics Covered:**  
-  - Implement custom made mini algorithms.
+  - Implement custom made stack and reverse string.
   - Mini project named TodoListCLI.
 
 *Example Code*
