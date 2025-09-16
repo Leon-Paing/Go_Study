@@ -110,6 +110,7 @@ func (t *TodoList) markDone() {
   - Learn why channels are important.
   - Know difference between buffered and unbuffered channels.
   - Channel sequence.
+  - Sync and WaitGroup.
 
 *Example Code*
 ```go
