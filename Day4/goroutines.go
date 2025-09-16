@@ -1,7 +1,5 @@
 // In Go, every program runs in a main goroutine by default.
-
 // A goroutine is a lightweight thread of execution managed by the Go runtime.
-
 // Start a goroutine with the go keyword.
 
 package main
