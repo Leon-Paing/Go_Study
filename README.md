@@ -111,5 +111,12 @@ func (t *TodoList) markDone() {
 
 *Example Code*
 ```go
+func main() {
 
+	go printNumbers()
+	go printHello()
+
+	time.Sleep(2 * time.Second)
+	fmt.Println("Finished")
+}
 ```
