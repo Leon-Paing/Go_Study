@@ -114,12 +114,14 @@ func (t *TodoList) markDone() {
 
 *Example Code*
 ```go
-func main() {
-
-	go printNumbers()
-	go printHello()
-
-	time.Sleep(2 * time.Second)
-	fmt.Println("Finished")
-}
+for i := 0; i <= 2; i++ {
+		select {
+		case msg1 := <-ch1:
+			fmt.Println("Message:", msg1)
+		case msg2 := <-ch2:
+			fmt.Println("Message:", msg2)
+		case <-time.After(3 * time.Second):
+			fmt.Println("Timeout!..Finished")
+		}
+	}
 ```
