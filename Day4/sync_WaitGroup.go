@@ -1,3 +1,5 @@
+// Wait for goroutines to finish without blocking with Sleep.
+
 package main
 
 import (
