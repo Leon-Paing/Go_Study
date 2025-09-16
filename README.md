@@ -15,7 +15,7 @@
 [Day 1](#day-1) | Introduction to Go & Setup <br>
 [Day 2](#day-2) | Dealing with data <br>
 [Day 3](#day-3) | Custom algorithms <br>
-[Day 4](#day-4) | Go routines, Channels(buffered & unbuffered), Select <br>
+[Day 4](#day-4) | Go routines and Channels <br>
 ---
 
 ## Day 1 
@@ -103,7 +103,7 @@ func (t *TodoList) markDone() {
 }
 ```
 ## Day 4
-### Go routines, Channels (buffered & unbuffered), Select
+### Go routines and Channels
 
 - **Topics Covered:**  
   - Understand about go routines.
