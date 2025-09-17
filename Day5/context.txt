@@ -1,0 +1,11 @@
+What is context?
+
+A context.Context carries deadlines, cancellation signals, and request-scoped values across goroutines.
+
+Commonly used in:
+
+HTTP servers (cancel request if client disconnects).
+
+Goroutines (stop work after timeout).
+
+Worker pools (cancel all workers together).
