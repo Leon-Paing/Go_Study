@@ -132,6 +132,8 @@ for i := 0; i <= 2; i++ {
 - **Topics Covered:**  
   - Context with Timeout
   - Context with Cancel
+  - Context with Deadline
+  - Context with Value
 
 *Example Code*
 ```go
