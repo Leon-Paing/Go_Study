@@ -1,3 +1,5 @@
+//Same with timeout but with deadline, you can set exacly what time to cancel the context.
+
 package main
 
 import (
