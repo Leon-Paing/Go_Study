@@ -1,3 +1,5 @@
+// Go convention: write one test function with multiple test cases in a slice.
+
 package mathutils
 
 import "testing"
