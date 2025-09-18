@@ -24,10 +24,10 @@
 ### Introduction
 
 - **Topics Covered:**  
-  - Installing Go.  
-  - Learn go run, go build, go mod init.
-  - Review variables, types, loops, functions. 
-  - Writing your first Go program.
+  - Installing Go
+  - Learn go run, go build, go mod init
+  - Review variables, types, loops, functions
+  - Writing your first Go program
 
 *Example Code*
 ```go
