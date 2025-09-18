@@ -169,6 +169,8 @@ func longTask(ctx context.Context) {
 
 - **Topics Covered:**  
   - Understand testing file of go
+  - Your first Go _test file
+  - Table Driven Test
 
 *Example Code*
 ```go
