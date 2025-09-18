@@ -108,11 +108,11 @@ func (t *TodoList) markDone() {
 ### Go routines and Channels
 
 - **Topics Covered:**  
-  - Understand about go routines.
-  - Learn why channels are important.
-  - Know difference between buffered and unbuffered channels.
-  - Channel sequence.
-  - Sync and WaitGroup.
+  - Understand about go routines
+  - Learn why channels are important
+  - Know difference between buffered and unbuffered channels
+  - Channel sequence
+  - Sync and WaitGroup
 
 *Example Code*
 ```go
