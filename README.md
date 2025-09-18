@@ -171,6 +171,7 @@ func longTask(ctx context.Context) {
   - Understand testing file of go
   - Your first Go _test file
   - Table Driven Test
+  - Benchmark Test
 
 *Example Code*
 ```go
