@@ -1,4 +1,5 @@
 //Use Benchmark at the start of function.
+//run Benchmark testing with `go test -bench=.`
 
 package mathutils
 
