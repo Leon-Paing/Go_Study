@@ -10,7 +10,7 @@ func TestAdd_TableDriven(t *testing.T) {
 		a, b     int
 		expected int
 	}{
-		{"2+2", 2, 2, 6},
+		{"2+2", 2, 2, 4},
 		{"-1+1", -1, 1, 0},
 		{"54+34", 54, 34, 88},
 	}
