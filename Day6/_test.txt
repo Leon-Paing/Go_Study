@@ -1,0 +1,5 @@
+Test files end with _test.go
+
+Functions must start with Test and take *testing.T
+
+Run with `go test`
