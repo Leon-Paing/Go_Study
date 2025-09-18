@@ -44,8 +44,8 @@ func main() {
 ### Dealing with data
 
 - **Topics Covered:**  
-  - Study structs, slices, maps, methods, interfaces.
-  - Mini project named car-manager.
+  - Study structs, slices, maps, methods, interfaces
+  - Mini project named car-manager
 
 *Example Code*
 ```go
