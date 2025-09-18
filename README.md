@@ -164,3 +164,25 @@ func longTask(ctx context.Context) {
 	}
 }
 ```
+## Day 6
+### Testing
+
+- **Topics Covered:**  
+  - Understand testing file of go
+
+*Example Code*
+```go
+package mathutils
+
+import (
+	"testing"
+)
+
+func TestAdd(t *testing.T) {
+	result := Add(2, 3)
+	if result != 5 {
+		t.Errorf("Expected 5 got %d", result)
+	}
+}
+
+```
