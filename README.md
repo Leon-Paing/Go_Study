@@ -75,8 +75,8 @@ type Valuable interface {
 ### Todo List CLI App
 
 - **Topics Covered:**  
-  - Implement custom made stack and reverse string.
-  - Mini project named TodoCLI.
+  - Implement custom made stack and reverse string
+  - Mini project named TodoCLI
 
 *Example Code*
 ```go
