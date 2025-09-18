@@ -175,16 +175,24 @@ func longTask(ctx context.Context) {
 
 *Example Code*
 ```go
-package mathutils
+func TestAdd_TableDriven(t *testing.T) {
+	tests := []struct {
+		name     string
+		a, b     int
+		expected int
+	}{
+		{"2+2", 2, 2, 4},
+		{"-1+1", -1, 1, 0},
+		{"54+34", 54, 34, 88},
+	}
 
-import (
-	"testing"
-)
-
-func TestAdd(t *testing.T) {
-	result := Add(2, 3)
-	if result != 5 {
-		t.Errorf("Expected 5 got %d", result)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := Add(tt.a, tt.b)
+			if result != tt.expected {
+				t.Errorf("Expected %d got %d", tt.expected, result)
+			}
+		})
 	}
 }
 
