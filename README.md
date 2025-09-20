@@ -202,28 +202,17 @@ func TestAdd_TableDriven(t *testing.T) {
 ### Manual testing for CLITodo App
 
 - **Topics Covered:**  
-  - Write test file manually.
+  - Write test file manually
 
 *Example Code*
 ```go
-func TestAdd_TableDriven(t *testing.T) {
-	tests := []struct {
-		name     string
-		a, b     int
-		expected int
-	}{
-		{"2+2", 2, 2, 4},
-		{"-1+1", -1, 1, 0},
-		{"54+34", 54, 34, 88},
-	}
+func TestMarkDone(t *testing.T) {
+	var t1 Todo
+	t1.Add("Walk the dog")
+	t1.MarkDone()
 
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			result := Add(tt.a, tt.b)
-			if result != tt.expected {
-				t.Errorf("Expected %d got %d", tt.expected, result)
-			}
-		})
+	if !t1.status {
+		t.Errorf("Expected true got false")
 	}
 }
 
