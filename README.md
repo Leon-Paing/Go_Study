@@ -247,6 +247,7 @@ func TestMarkDone(t *testing.T) {
   - Hello Go Web
   - Separate function with handler
   - Multiple routes
+  - Query Reader
 
 _Example Code_
 
