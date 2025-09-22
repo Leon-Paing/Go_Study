@@ -10,7 +10,7 @@ func main() {
 	http.HandleFunc("/hello", HelloHandler)
 
 	fmt.Println("Server running on http://localhost:8834")
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8834", nil)
 }
 
 func HelloHandler(w http.ResponseWriter, r *http.Request) {
