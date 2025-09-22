@@ -10,7 +10,7 @@ func main() {
 	http.HandleFunc("/", HomePage)
 	http.HandleFunc("/about", AboutPage)
 
-	fmt.Println("Server running at port http://localhost:8834")
+	fmt.Println("Server running at http://localhost:8834")
 	http.ListenAndServe(":8834", nil)
 }
 
