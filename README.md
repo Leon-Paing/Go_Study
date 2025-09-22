@@ -218,3 +218,22 @@ func TestMarkDone(t *testing.T) {
 }
 
 ```
+## Day 8
+### Introduction to "net/http"
+
+- **Topics Covered:**  
+  - Hello Go Web
+
+*Example Code*
+```go
+func TestMarkDone(t *testing.T) {
+	var t1 Todo
+	t1.Add("Walk the dog")
+	t1.MarkDone()
+
+	if !t1.status {
+		t.Errorf("Expected true got false")
+	}
+}
+
+```
