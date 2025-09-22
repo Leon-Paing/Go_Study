@@ -19,7 +19,7 @@
 [Day 5](#day-5) | Context <br>
 [Day 6](#day-6) | Testing <br>
 [Day 7](#day-7) | Manual testing for CLITodo App <br>
-[Day 8](#day-8) | Introduction to net/http <br>
+[Day 8](#day-8) | Introduction to "net/http" <br>
 ---
 
 ## Day 1 
