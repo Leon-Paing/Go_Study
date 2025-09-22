@@ -18,6 +18,7 @@
 [Day 4](#day-4) | Go routines and Channels <br>
 [Day 5](#day-5) | Context <br>
 [Day 6](#day-6) | Testing <br>
+[Day 7](#day-7) | Manual testing for CLITodo App <br>
 ---
 
 ## Day 1 
@@ -193,6 +194,25 @@ func TestAdd_TableDriven(t *testing.T) {
 				t.Errorf("Expected %d got %d", tt.expected, result)
 			}
 		})
+	}
+}
+
+```
+## Day 7
+### Manual testing for CLITodo App
+
+- **Topics Covered:**  
+  - Write test file manually
+
+*Example Code*
+```go
+func TestMarkDone(t *testing.T) {
+	var t1 Todo
+	t1.Add("Walk the dog")
+	t1.MarkDone()
+
+	if !t1.status {
+		t.Errorf("Expected true got false")
 	}
 }
 
