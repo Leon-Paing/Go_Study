@@ -9,7 +9,7 @@ func main() {
 
 	http.HandleFunc("/", QueryReader)
 
-	fmt.Println("Server running at port 8834...")
+	fmt.Println("Server running at http://localhost:8834")
 	http.ListenAndServe(":8834", nil)
 }
 
