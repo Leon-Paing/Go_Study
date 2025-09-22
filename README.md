@@ -1,8 +1,8 @@
 # 🦁 Learn Go Programming with Me
 
-### This is the Go Programming guide for **beginners to experts**.  
+### This is the Go Programming guide for **beginners to experts**.
 
-> 💡 Remember: *Consistency is Key!*
+> 💡 Remember: _Consistency is Key!_
 
 <p align="center">
 	<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHo3OTg3b3Qya2F5NGFjY3lmODcya3lncDRraW1qOTZmbmRmMmMzMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/PhTSmzCqkliqIJ9ZtZ/giphy.gif">
@@ -20,18 +20,21 @@
 [Day 6](#day-6) | Testing <br>
 [Day 7](#day-7) | Manual testing for CLITodo App <br>
 [Day 8](#day-8) | Introduction to "net/http" <br>
+
 ---
 
-## Day 1 
+## Day 1
+
 ### Introduction
 
-- **Topics Covered:**  
+- **Topics Covered:**
   - Installing Go
   - Learn go run, go build, go mod init
   - Review variables, types, loops, functions
   - Writing your first Go program
 
-*Example Code*
+_Example Code_
+
 ```go
 package main
 
@@ -43,13 +46,15 @@ func main() {
 ```
 
 ## Day 2
+
 ### Dealing with data
 
-- **Topics Covered:**  
+- **Topics Covered:**
   - Study structs, slices, maps, methods, interfaces
   - Mini project named car-manager
 
-*Example Code*
+_Example Code_
+
 ```go
 type Car struct {
 	Brand string
@@ -73,14 +78,17 @@ type Valuable interface {
 	Value() float64
 }
 ```
+
 ## Day 3
+
 ### Todo List CLI App
 
-- **Topics Covered:**  
+- **Topics Covered:**
   - Implement custom made stack and reverse string
   - Mini project named TodoCLI
 
-*Example Code*
+_Example Code_
+
 ```go
 type TodoList struct {
 	Task   string
@@ -106,17 +114,20 @@ func (t *TodoList) markDone() {
 	t.Status = true
 }
 ```
+
 ## Day 4
+
 ### Go routines and Channels
 
-- **Topics Covered:**  
+- **Topics Covered:**
   - Understand about go routines
   - Learn why channels are important
   - Know difference between buffered and unbuffered channels
   - Channel sequence
   - Sync and WaitGroup
 
-*Example Code*
+_Example Code_
+
 ```go
 for i := 0; i <= 2; i++ {
 		select {
@@ -129,16 +140,19 @@ for i := 0; i <= 2; i++ {
 		}
 	}
 ```
+
 ## Day 5
+
 ### Learn about Context
 
-- **Topics Covered:**  
+- **Topics Covered:**
   - Context with Timeout
   - Context with Cancel
   - Context with Deadline
   - Context with Value
 
-*Example Code*
+_Example Code_
+
 ```go
 package main
 
@@ -166,16 +180,19 @@ func longTask(ctx context.Context) {
 	}
 }
 ```
+
 ## Day 6
+
 ### Testing
 
-- **Topics Covered:**  
+- **Topics Covered:**
   - Understand testing file of go
-  - Your first Go _test file
+  - Your first Go \_test file
   - Table Driven Test
   - Benchmark Test
 
-*Example Code*
+_Example Code_
+
 ```go
 func TestAdd_TableDriven(t *testing.T) {
 	tests := []struct {
@@ -199,13 +216,16 @@ func TestAdd_TableDriven(t *testing.T) {
 }
 
 ```
+
 ## Day 7
+
 ### Manual testing for CLITodo App
 
-- **Topics Covered:**  
+- **Topics Covered:**
   - Write test file manually
 
-*Example Code*
+_Example Code_
+
 ```go
 func TestMarkDone(t *testing.T) {
 	var t1 Todo
@@ -218,22 +238,24 @@ func TestMarkDone(t *testing.T) {
 }
 
 ```
+
 ## Day 8
+
 ### Introduction to "net/http"
 
-- **Topics Covered:**  
+- **Topics Covered:**
   - Hello Go Web
+  - Separate function with handler
 
-*Example Code*
+_Example Code_
+
 ```go
-func TestMarkDone(t *testing.T) {
-	var t1 Todo
-	t1.Add("Walk the dog")
-	t1.MarkDone()
+func main() {
 
-	if !t1.status {
-		t.Errorf("Expected true got false")
-	}
+	http.HandleFunc("/hello", HelloHandler)
+
+	fmt.Println("Server running on port 8080")
+	http.ListenAndServe(":8080", nil)
 }
 
 ```
