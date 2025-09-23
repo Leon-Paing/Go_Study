@@ -284,12 +284,15 @@ func AboutPage(w http.ResponseWriter, r *http.Request) {
 _Example Code_
 
 ```go
-func loggingMiddleware(next http.Handler) http.Handler {
+func recoverMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		start := time.Now()
-		log.Printf("%s %s %s", r.Method, r.RequestURI, r.RemoteAddr)
+		if err := recover(); err != nil {
+			log.Println("Recover from panic...", err)
+			http.Error(w, "Internal server error", http.StatusInternalServerError)
+
+			//Server didn't crash, it just logged out panic
+		}
 		next.ServeHTTP(w, r)
-		log.Printf("Completed in %v", time.Since(start))
 	})
 }
 
