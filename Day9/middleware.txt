@@ -1,0 +1,5 @@
+What is Middleware?
+
+- Middleware is a function that wraps an http.Handler to add extra behavior.
+
+- The pattern: func(http.Handler) http.Handler
