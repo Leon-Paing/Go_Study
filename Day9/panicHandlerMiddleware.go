@@ -27,6 +27,7 @@ func recoverMiddleware(next http.Handler) http.Handler {
 	})
 }
 
+// Sample panic message
 func panicHandler(w http.ResponseWriter, r *http.Request) {
 	panic("Something went wrong:(")
 }
