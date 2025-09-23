@@ -19,6 +19,7 @@ func main() {
 	http.ListenAndServe(":8834", loggedmux)
 }
 
+// logs out the request method, request URL and address and completion time
 func loggingMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		start := time.Now()
