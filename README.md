@@ -277,8 +277,9 @@ func AboutPage(w http.ResponseWriter, r *http.Request) {
 ### Middleware
 
 - **Topics Covered:**
-  - Understanding middleware
+  - Understanding Middleware
   - Logging Middleware
+  - Panic Handler Middleware
 
 _Example Code_
 
