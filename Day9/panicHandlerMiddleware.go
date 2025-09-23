@@ -19,12 +19,16 @@ func main() {
 
 func recoverMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if err := recover(); err != nil {
-			log.Println("Recover from panic...", err)
-			http.Error(w, "Internal server error", http.StatusInternalServerError)
 
-			//Server didn't crash, it just logged out panic
-		}
+		//use defer to properly handle panic due to order of execution
+		defer func() {
+			if err := recover(); err != nil {
+				log.Println("Recover from panic...", err)
+				http.Error(w, "Internal server error", http.StatusInternalServerError)
+
+				//Server didn't crash, it just logged out panic
+			}
+		}()
 		next.ServeHTTP(w, r)
 	})
 }
