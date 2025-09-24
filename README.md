@@ -301,12 +301,10 @@ func recoverMiddleware(next http.Handler) http.Handler {
 
 ## Day 10
 
-### JSON
+### "encoding/json"
 
 - **Topics Covered:**
-  - Understanding Middleware
-  - Logging Middleware
-  - Panic Handler Middleware
+  - Understanding how encoding works
 
 _Example Code_
 
