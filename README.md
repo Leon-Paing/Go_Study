@@ -21,6 +21,7 @@
 [Day 7](#day-7) | Manual testing for CLITodo App <br>
 [Day 8](#day-8) | Introduction to "net/http" <br>
 [Day 9](#day-9) | Middleware <br>
+[Day 10](#day-10) | JSON <br>
 
 ---
 
