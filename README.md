@@ -298,3 +298,29 @@ func recoverMiddleware(next http.Handler) http.Handler {
 }
 
 ```
+
+## Day 10
+
+### Middleware
+
+- **Topics Covered:**
+  - Understanding Middleware
+  - Logging Middleware
+  - Panic Handler Middleware
+
+_Example Code_
+
+```go
+func recoverMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if err := recover(); err != nil {
+			log.Println("Recover from panic...", err)
+			http.Error(w, "Internal server error", http.StatusInternalServerError)
+
+			//Server didn't crash, it just logged out panic
+		}
+		next.ServeHTTP(w, r)
+	})
+}
+
+```
