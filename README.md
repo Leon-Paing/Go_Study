@@ -309,16 +309,19 @@ func recoverMiddleware(next http.Handler) http.Handler {
 _Example Code_
 
 ```go
-func recoverMiddleware(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if err := recover(); err != nil {
-			log.Println("Recover from panic...", err)
-			http.Error(w, "Internal server error", http.StatusInternalServerError)
+func main() {
+	todo := Todo{ID: 1, Task: "Learn Go", Status: false}
 
-			//Server didn't crash, it just logged out panic
-		}
-		next.ServeHTTP(w, r)
-	})
+	jsonData, err := json.Marshal(todo)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(string(jsonData))
+
+	pretty, _ := json.MarshalIndent(todo, "", "  ")
+	fmt.Println(string(pretty))
+
 }
 
 ```
