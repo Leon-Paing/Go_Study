@@ -16,6 +16,7 @@ func main() {
 
 	var todo Todo2
 	err := json.Unmarshal([]byte(data), &todo)
+	//turn data into byte format and pointer to todo variable so that it stores values of unmarshalled data
 	if err != nil {
 		panic("Error")
 	}
