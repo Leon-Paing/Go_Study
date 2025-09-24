@@ -312,19 +312,16 @@ func recoverMiddleware(next http.Handler) http.Handler {
 _Example Code_
 
 ```go
-func main() {
-	todo := Todo{ID: 1, Task: "Learn Go", Status: false}
+file, _ := os.Create("todo.json")
+	defer file.Close()
 
-	jsonData, err := json.Marshal(todo)
-	if err != nil {
-		panic(err)
-	}
+	encoder := json.NewEncoder(file)
+	encoder.SetIndent("", "  ")
 
-	fmt.Println(string(jsonData))
+	todo := Todo3{ID: 2, Task: "Write and read file"}
+	encoder.Encode(todo)
 
-	pretty, _ := json.MarshalIndent(todo, "", "  ")
-	fmt.Println(string(pretty))
-
-}
+	file2, _ := os.Open("todo.json")
+	defer file2.Close()
 
 ```
