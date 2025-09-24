@@ -301,7 +301,7 @@ func recoverMiddleware(next http.Handler) http.Handler {
 
 ## Day 10
 
-### Middleware
+### JSON
 
 - **Topics Covered:**
   - Understanding Middleware
