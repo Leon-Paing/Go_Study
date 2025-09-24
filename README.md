@@ -307,6 +307,7 @@ func recoverMiddleware(next http.Handler) http.Handler {
   - Understanding how encoding works
   - Converting JSON to Go struct
   - Handling unknwon JSON
+  - Write and read .json file (encode/decode)
 
 _Example Code_
 
