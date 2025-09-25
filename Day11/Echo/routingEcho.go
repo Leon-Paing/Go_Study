@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"strconv"
 
 	"github.com/labstack/echo/v4"
 )
@@ -25,8 +26,22 @@ func main() {
 	})
 
 	e.GET("todo/:id", func(c echo.Context) error {
-		id := c.Param("id")
-		return c.String(http.StatusOK, "Todo ID: "+id)
+		idStr := c.Param("id")
+		id, err := strconv.Atoi(idStr)
+		if err != nil {
+			return c.JSON(http.StatusBadRequest, map[string]string{
+				"error": "500 Server Error",
+			})
+		}
+
+		for _, todo := range todos {
+			if todo.ID == id {
+				return c.JSON(http.StatusOK, todo)
+			}
+		}
+		return c.JSON(http.StatusNotFound, map[string]string{
+			"error": "Not Found",
+		})
 	})
 
 	fmt.Println("Server running at http://localhost:8834")
