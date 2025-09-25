@@ -332,7 +332,7 @@ file, _ := os.Create("todo.json")
 ### Routing with Chi/Echo
 
 - **Topics Covered:**
-  - Chi
+  - Todo API with Chi
 
 _Example Code_
 
