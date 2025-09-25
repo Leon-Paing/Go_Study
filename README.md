@@ -340,15 +340,15 @@ _Example Code_
 ```go
 r := chi.NewRouter()
 
-	r.Get("/todos", func(w http.ResponseWriter, r *http.Request) {
-		json.NewEncoder(w).Encode(todos)
-	})
+r.Get("/todos", func(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(todos)
+})
 //////////////////////////////////////////////////////////////////
 
-	e := echo.New()
+e := echo.New()
 
-	e.GET("todos", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, todos)
-	})
+e.GET("todos", func(c echo.Context) error {
+	return c.JSON(http.StatusOK, todos)
+})
 
 ```
