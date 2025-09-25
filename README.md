@@ -329,7 +329,7 @@ file, _ := os.Create("todo.json")
 
 ## Day 11
 
-### "encoding/json"
+### Routing with Chi/
 
 - **Topics Covered:**
   - Understanding how encoding works
