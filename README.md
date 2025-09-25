@@ -22,6 +22,7 @@
 [Day 8](#day-8) | Introduction to "net/http" <br>
 [Day 9](#day-9) | Middleware <br>
 [Day 10](#day-10) | "encoding/json" <br>
+[Day 11](#day-11) | Routing with Chi/Echo <br>
 
 ---
 
