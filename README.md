@@ -332,10 +332,7 @@ file, _ := os.Create("todo.json")
 ### Routing with Chi/Echo
 
 - **Topics Covered:**
-  - Understanding how encoding works
-  - Converting JSON to Go struct
-  - Handling unknwon JSON
-  - Write and read .json file (encode/decode)
+  - Chi
 
 _Example Code_
 
