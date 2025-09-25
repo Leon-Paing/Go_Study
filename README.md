@@ -338,16 +338,17 @@ file, _ := os.Create("todo.json")
 _Example Code_
 
 ```go
-file, _ := os.Create("todo.json")
-	defer file.Close()
+r := chi.NewRouter()
 
-	encoder := json.NewEncoder(file)
-	encoder.SetIndent("", "  ")
+	r.Get("/todos", func(w http.ResponseWriter, r *http.Request) {
+		json.NewEncoder(w).Encode(todos)
+	})
+//////////////////////////////////////////////////////////////////
 
-	todo := Todo3{ID: 2, Task: "Write and read file"}
-	encoder.Encode(todo)
+	e := echo.New()
 
-	file2, _ := os.Open("todo.json")
-	defer file2.Close()
+	e.GET("todos", func(c echo.Context) error {
+		return c.JSON(http.StatusOK, todos)
+	})
 
 ```
