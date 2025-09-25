@@ -40,7 +40,7 @@ func main() {
 			}
 		}
 
-		http.Error(w, "Error", http.StatusNotFound)
+		http.Error(w, "Error 404", http.StatusNotFound)
 	})
 
 	fmt.Println("Server running at http://localhost:8834")
