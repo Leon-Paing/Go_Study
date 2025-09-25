@@ -326,3 +326,30 @@ file, _ := os.Create("todo.json")
 	defer file2.Close()
 
 ```
+
+## Day 11
+
+### "encoding/json"
+
+- **Topics Covered:**
+  - Understanding how encoding works
+  - Converting JSON to Go struct
+  - Handling unknwon JSON
+  - Write and read .json file (encode/decode)
+
+_Example Code_
+
+```go
+file, _ := os.Create("todo.json")
+	defer file.Close()
+
+	encoder := json.NewEncoder(file)
+	encoder.SetIndent("", "  ")
+
+	todo := Todo3{ID: 2, Task: "Write and read file"}
+	encoder.Encode(todo)
+
+	file2, _ := os.Open("todo.json")
+	defer file2.Close()
+
+```
