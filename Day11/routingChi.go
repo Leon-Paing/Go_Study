@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"strconv"
 
 	"github.com/go-chi/chi/v5"
 )
@@ -26,8 +27,20 @@ func main() {
 	})
 
 	r.Get("/todo/{id}", func(w http.ResponseWriter, r *http.Request) {
-		id := chi.URLParam(r, "id")
-		w.Write([]byte("Todo ID: " + id))
+		idStr := chi.URLParam(r, "id")
+		id, err := strconv.Atoi(idStr)
+		if err != nil {
+			http.Error(w, "Invalid ID", http.StatusBadRequest)
+		}
+
+		for _, todo := range todos {
+			if todo.ID == id {
+				json.NewEncoder(w).Encode(todo)
+				return
+			}
+		}
+
+		http.Error(w, "Error", http.StatusNotFound)
 	})
 
 	fmt.Println("Server running at http://localhost:8834")
