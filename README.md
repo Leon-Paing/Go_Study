@@ -23,6 +23,7 @@
 [Day 9](#day-9) | Middleware <br>
 [Day 10](#day-10) | "encoding/json" <br>
 [Day 11](#day-11) | Routing with Chi/Echo <br>
+[Day 12](#day-12) | Simple POST/GET Todo API <br>
 
 ---
 
@@ -350,5 +351,32 @@ e := echo.New()
 e.GET("todos", func(c echo.Context) error {
 	return c.JSON(http.StatusOK, todos)
 })
+
+```
+
+## Day 12
+
+### Simple POST/GET Todo API
+
+- **Topics Covered:**
+  - GET API
+  - POST new todo API
+  - GET with id API
+
+_Example Code_
+
+```go
+	e.POST("/todos", func(c echo.Context) error {
+			var newTodo Todo
+			if err := c.Bind(&newTodo); err != nil {
+				return c.JSON(http.StatusBadGateway, map[string]string{
+					"error": "Not Available",
+				})
+			}
+
+			newTodo.ID = len(todos) + 1
+			todos = append(todos, newTodo)
+			return c.JSON(http.StatusCreated, newTodo)
+		})
 
 ```
