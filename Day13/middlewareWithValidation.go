@@ -23,6 +23,8 @@ var validate = validator.New()
 func main() {
 	e := echo.New()
 
+	e.HTTPErrorHandler = customErrorHander
+
 	e.GET("/todos", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, todos)
 	})
@@ -64,7 +66,7 @@ func main() {
 
 func customErrorHander(err error, c echo.Context) {
 	code := http.StatusInternalServerError
-	message := "Something went wrong"
+	var message interface{} = "Something went wrong"
 
 	if he, ok := err.(*echo.HTTPError); ok {
 		code = he.Code
