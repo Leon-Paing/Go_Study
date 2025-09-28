@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"strconv"
 
 	"github.com/go-playground/validator/v10"
 	"github.com/labstack/echo/v4"
@@ -42,6 +43,22 @@ func main() {
 		return c.JSON(http.StatusCreated, newTodo)
 
 	})
+
+	e.GET("/todo/:id", func(c echo.Context) error {
+		id, err := strconv.Atoi(c.Param("id"))
+		if err != nil {
+			return echo.NewHTTPError(http.StatusBadRequest, "Invalid ID")
+		}
+
+		for _, t := range todos {
+			if t.ID == id {
+				return c.JSON(http.StatusOK, t)
+			}
+		}
+
+		return echo.NewHTTPError(http.StatusNotFound, "Todo Not Found")
+	})
+
 	e.Logger.Fatal(e.Start(":8834"))
 }
 
