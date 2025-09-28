@@ -384,12 +384,10 @@ _Example Code_
 
 ## Day 13
 
-### Simple POST/GET Todo API
+### Middleware and Validation with echo
 
 - **Topics Covered:**
-  - GET API
-  - POST new todo API
-  - GET with id API
+  - customErrorHandler with echo
 
 _Example Code_
 
