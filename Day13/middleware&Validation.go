@@ -26,3 +26,20 @@ func main() {
 		return c.JSON(http.StatusOK, todos)
 	})
 }
+
+func customErrorHander(err error, c echo.Context) {
+	code := http.StatusInternalServerError
+	message := "Something went wrong"
+
+	if he, ok := err.(*echo.HTTPError); ok {
+		code = he.Code
+		message = he.Message
+	}
+
+	c.JSON(code, map[string]interface{}{
+		"error":  message,
+		"status": code,
+		"path":   c.Request().RequestURI,
+		"method": c.Request().Method,
+	})
+}
