@@ -24,6 +24,7 @@
 [Day 10](#day-10) | "encoding/json" <br>
 [Day 11](#day-11) | Routing with Chi/Echo <br>
 [Day 12](#day-12) | Simple POST/GET Todo API <br>
+[Day 13]
 
 ---
 
