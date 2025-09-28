@@ -25,6 +25,24 @@ func main() {
 	e.GET("/todos", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, todos)
 	})
+
+	e.POST("/todos", func(c echo.Context) error {
+		var newTodo Todo
+		if err := c.Bind(&newTodo); err != nil {
+			return echo.NewHTTPError(http.StatusBadRequest, "Invalid JSON format")
+		}
+
+		if err := validate.Struct(newTodo); err != nil {
+			return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+		}
+
+		newTodo.ID = len(todos) + 1
+		todos = append(todos, newTodo)
+
+		return c.JSON(http.StatusCreated, newTodo)
+
+	})
+	e.Logger.Fatal(e.Start(":8834"))
 }
 
 func customErrorHander(err error, c echo.Context) {
