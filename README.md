@@ -392,17 +392,11 @@ _Example Code_
 _Example Code_
 
 ```go
-	e.POST("/todos", func(c echo.Context) error {
-			var newTodo Todo
-			if err := c.Bind(&newTodo); err != nil {
-				return c.JSON(http.StatusBadGateway, map[string]string{
-					"error": "Not Available",
-				})
-			}
+	e := echo.New()
 
-			newTodo.ID = len(todos) + 1
-			todos = append(todos, newTodo)
-			return c.JSON(http.StatusCreated, newTodo)
-		})
+	e.HTTPErrorHandler = customErrorHander
 
+	e.GET("/todos", func(c echo.Context) error {
+		return c.JSON(http.StatusOK, todos)
+	})
 ```
