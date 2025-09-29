@@ -24,7 +24,7 @@ var validate = validator.New()
 
 func main() {
 	e := echo.New()
-	// e.HTTPErrorHandler = customErrorHander
+	e.HTTPErrorHandler = customErrorHander
 
 	e.GET("/todos", ListTodos)
 	e.GET("/todos/:id", GetTodo)
@@ -51,7 +51,7 @@ func GetTodo(c echo.Context) error {
 		}
 	}
 
-	return c.JSON(http.StatusBadGateway, "Not found related Data")
+	return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 }
 
 func AddTodo(c echo.Context) error {
@@ -61,7 +61,7 @@ func AddTodo(c echo.Context) error {
 	}
 
 	if err := validate.Struct(newTodo); err != nil {
-		c.JSON(http.StatusBadRequest, err.Error())
+		echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}
 
 	newTodo.ID = len(todos) + 1
