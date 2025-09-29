@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"strconv"
 
 	"github.com/go-playground/validator/v10"
 	"github.com/labstack/echo/v4"
@@ -26,7 +27,7 @@ func main() {
 	// e.HTTPErrorHandler = customErrorHander
 
 	e.GET("/todos", ListTodos)
-	// e.GET("/todos/:id", GetTodo)
+	e.GET("/todos/:id", GetTodo)
 	// e.POST("/todos", AddTodo)
 	// e.PUT("/todos/:id", UpdateTodo)
 	// e.DELETE("todos/:id", DeleteTodo)
@@ -36,4 +37,19 @@ func main() {
 
 func ListTodos(c echo.Context) error {
 	return c.JSON(http.StatusOK, todos)
+}
+
+func GetTodo(c echo.Context) error {
+	id, err := strconv.Atoi(c.Param("id"))
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, "Invalid ID")
+	}
+
+	for _, t := range todos {
+		if t.ID == id {
+			return c.JSON(http.StatusOK, t)
+		}
+	}
+
+	return c.JSON(http.StatusBadGateway, "Not found related Data")
 }
