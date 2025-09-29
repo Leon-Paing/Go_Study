@@ -414,11 +414,20 @@ _Example Code_
 _Example Code_
 
 ```go
-	e := echo.New()
+	func DeleteTodo(c echo.Context) error {
+		id, err := strconv.Atoi(c.Param("id"))
+		if err != nil {
+			return echo.NewHTTPError(http.StatusBadGateway, "Invalid ID")
+		}
 
-	e.HTTPErrorHandler = customErrorHander
-
-	e.GET("/todos", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, todos)
-	})
+		for i, t := range todos {
+			if t.ID == id {
+				todos = append(todos[:i], todos[i+1:]...)
+				c.JSON(http.StatusOK, map[string]string{
+					"message": "Todo Deleted",
+				})
+			}
+		}
+		return echo.NewHTTPError(http.StatusNotFound, "Todo Not Found")
+	}
 ```
