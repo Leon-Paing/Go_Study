@@ -51,7 +51,7 @@ func GetTodo(c echo.Context) error {
 		}
 	}
 
-	return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+	return echo.NewHTTPError(http.StatusNotFound, "Todo Not Found")
 }
 
 func AddTodo(c echo.Context) error {
