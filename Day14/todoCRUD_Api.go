@@ -70,3 +70,20 @@ func AddTodo(c echo.Context) error {
 
 	return c.JSON(http.StatusCreated, newTodo)
 }
+
+func customErrorHander(err error, c echo.Context) {
+	code := http.StatusInternalServerError
+	var message interface{} = "Something went wrong"
+
+	if he, ok := err.(*echo.HTTPError); ok {
+		code = he.Code
+		message = he.Message
+	}
+
+	c.JSON(code, map[string]interface{}{
+		"error":  message,
+		"status": code,
+		"path":   c.Request().URL,
+		"method": c.Request().Method,
+	})
+}
