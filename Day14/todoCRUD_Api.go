@@ -71,6 +71,29 @@ func AddTodo(c echo.Context) error {
 	return c.JSON(http.StatusCreated, newTodo)
 }
 
+func UpdateTodo(c echo.Context) error {
+	id, err := strconv.Atoi(c.Param("id"))
+	if err != nil {
+		return echo.NewHTTPError(http.StatusBadGateway, "Invalid ID")
+	}
+
+	var update Todo
+	if err := c.Bind(&update); err != nil {
+		return echo.NewHTTPError(http.StatusBadRequest, "Invalid JSON")
+	}
+
+	for i, t := range todos {
+		if t.ID == id {
+			todos[i].Task = update.Task
+			todos[i].Status = update.Status
+
+			return c.JSON(http.StatusAccepted, todos[i])
+		}
+	}
+
+	return echo.NewHTTPError(http.StatusNotFound, "Todo Not Found")
+}
+
 func customErrorHander(err error, c echo.Context) {
 	code := http.StatusInternalServerError
 	var message interface{} = "Something went wrong"
