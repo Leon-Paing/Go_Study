@@ -94,6 +94,23 @@ func UpdateTodo(c echo.Context) error {
 	return echo.NewHTTPError(http.StatusNotFound, "Todo Not Found")
 }
 
+func DeleteTodo(c echo.Context) error {
+	id, err := strconv.Atoi(c.Param("id"))
+	if err != nil {
+		return echo.NewHTTPError(http.StatusBadGateway, "Invalid ID")
+	}
+
+	for i, t := range todos {
+		if t.ID == id {
+			todos = append(todos[:i], todos[i+1:]...)
+			c.JSON(http.StatusOK, map[string]string{
+				"message": "Todo Deleted",
+			})
+		}
+	}
+	return echo.NewHTTPError(http.StatusNotFound, "Todo Not Found")
+}
+
 func customErrorHander(err error, c echo.Context) {
 	code := http.StatusInternalServerError
 	var message interface{} = "Something went wrong"
