@@ -29,7 +29,7 @@ func main() {
 	e.GET("/todos", ListTodos)
 	e.GET("/todos/:id", GetTodo)
 	e.POST("/todos", AddTodo)
-	// e.PUT("/todos/:id", UpdateTodo)
+	e.PUT("/todos/:id", UpdateTodo)
 	// e.DELETE("todos/:id", DeleteTodo)
 
 	e.Logger.Fatal(e.Start(":8834"))
