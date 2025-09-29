@@ -28,7 +28,7 @@ func main() {
 
 	e.GET("/todos", ListTodos)
 	e.GET("/todos/:id", GetTodo)
-	// e.POST("/todos", AddTodo)
+	e.POST("/todos", AddTodo)
 	// e.PUT("/todos/:id", UpdateTodo)
 	// e.DELETE("todos/:id", DeleteTodo)
 
@@ -52,4 +52,21 @@ func GetTodo(c echo.Context) error {
 	}
 
 	return c.JSON(http.StatusBadGateway, "Not found related Data")
+}
+
+func AddTodo(c echo.Context) error {
+	var newTodo Todo
+	if err := c.Bind(&newTodo); err != nil {
+		c.JSON(http.StatusBadGateway, "Invalid JSON")
+	}
+
+	if err := validate.Struct(newTodo); err != nil {
+		c.JSON(http.StatusBadRequest, err.Error())
+	}
+
+	newTodo.ID = len(todos) + 1
+	newTodo.Status = false
+	todos = append(todos, newTodo)
+
+	return c.JSON(http.StatusCreated, newTodo)
 }
