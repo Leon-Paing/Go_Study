@@ -30,7 +30,7 @@ func main() {
 	e.GET("/todos/:id", GetTodo)
 	e.POST("/todos", AddTodo)
 	e.PUT("/todos/:id", UpdateTodo)
-	// e.DELETE("todos/:id", DeleteTodo)
+	e.DELETE("todos/:id", DeleteTodo)
 
 	e.Logger.Fatal(e.Start(":8834"))
 }
