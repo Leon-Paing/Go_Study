@@ -407,7 +407,9 @@ _Example Code_
 ### CRUD Todo API (In-memory)
 
 - **Topics Covered:**
-  - customErrorHandler with echo
+  - CRUD routes with eho
+  - Custom Error Handler function
+  - Validation
 
 _Example Code_
 
