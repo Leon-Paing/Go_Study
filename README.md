@@ -401,3 +401,22 @@ _Example Code_
 		return c.JSON(http.StatusOK, todos)
 	})
 ```
+
+## Day 14
+
+### CRUD Todo API (In-memory)
+
+- **Topics Covered:**
+  - customErrorHandler with echo
+
+_Example Code_
+
+```go
+	e := echo.New()
+
+	e.HTTPErrorHandler = customErrorHander
+
+	e.GET("/todos", func(c echo.Context) error {
+		return c.JSON(http.StatusOK, todos)
+	})
+```
