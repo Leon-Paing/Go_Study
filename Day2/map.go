@@ -16,9 +16,9 @@ func main() {
 	val, ok := scores["Musk"]
 
 	if ok {
-		fmt.Println("Score of Charlie is :", val)
+		fmt.Println("Score of Musk is :", val)
 	} else {
-		fmt.Println("Charlie is not found!")
+		fmt.Println("Musk is not found!")
 	}
 
 	for name, score := range scores {
